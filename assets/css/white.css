@@ -138,13 +138,13 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
     border: 2px solid #333;
 }
 
-.main_contactus_area input[type=submit] {
+.main_contactme_area input[type=submit] {
     background: #fafafa;
 }
-.main_contactus_area .contact_us_right .single_map_bottom {
+.main_contactme_area .contact_us_right .single_map_bottom {
     background: #fafafa;
 }
-.main_contactus_area .contact_us_right .single_map_bottom p {
+.main_contactme_area .contact_us_right .single_map_bottom p {
     color: #333;
 }
 .footer {

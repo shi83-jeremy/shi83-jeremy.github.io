@@ -180,7 +180,7 @@ a:hover{
 }
 
 .overlay{
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.15);    /* how grayed out it is */
     position: absolute;
     left:0;
     top:0;
@@ -292,7 +292,8 @@ nav ul li {
 ===============================================================*/
 
 .home {
-    background: url(../images/homebg.jpg) no-repeat top center #141315;
+    background: url(../images/sunrise.jpg) no-repeat center #141315;
+    /* background-position:  */
     background-size: cover;
     position: relative;
     padding-top: 80px;
@@ -367,6 +368,19 @@ nav ul li {
     font-size:2.225rem;
     border-radius: 50%;
     margin-bottom:1.875rem;
+}
+
+.about .head_title h2 {
+    line-height: 1rem;
+}
+
+/* About: title + photo left, text right */
+.about-profile-pic {
+    display: block;
+    width: 100%;
+    max-width: 220px;     /* adjust size */
+    margin-top: 32px;     /* space under "About Me" */
+    border-radius: 12px;  /* or 50% for circle */
 }
 
 
@@ -620,7 +634,7 @@ nav ul li {
 .main_contact_area .head_title h2{
     color:#fff;
 }
-.main_contactus_area input[type=submit] {
+.main_contactme_area input[type=submit] {
     -webkit-appearance: button;
     cursor: pointer;
     width: 20%;
@@ -632,12 +646,12 @@ nav ul li {
     transition: all 0.6s;
     color:#ddd;
 }
-.main_contactus_area input[type=submit]:hover {
+.main_contactme_area input[type=submit]:hover {
     background: #000;
     color:#fff;
     border-color:#fff;
 }
-.main_contactus_area input[type=submit]:focus {
+.main_contactme_area input[type=submit]:focus {
     outline:0;
 }
 

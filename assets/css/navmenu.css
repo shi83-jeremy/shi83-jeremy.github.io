@@ -1,3 +1,4 @@
+
 /* -------------------------------- 
 
 Modules - reusable parts of our design
@@ -23,7 +24,16 @@ Modules - reusable parts of our design
 Main components 
 
 -------------------------------- */
+.home, #home {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+.home .container,
+#home .container {
+  padding-top: 80px;  /* same as header height */
+}
 .home-main-content {
+    /* for main page content */
     position: relative;
     height: 100%;
     overflow: hidden;
@@ -41,6 +51,7 @@ Main components
     -moz-transition-duration: 0.5s;
     transition-duration: 0.5s;
 }
+
 .home-main-content.move-out {
     -webkit-transform: scale(0.6);
     -moz-transform: scale(0.6);
@@ -55,17 +66,23 @@ Main components
 }
 
 
-
 .cd-header {
-    position: absolute;
-    top:10%;
+    /* fixed header area */
+    position: fixed;
+    top:0;
     left: 0;
     width: 100%;
-    height: 50px;
-    z-index: 2;
-    -webkit-transition: background 0.2s;
-    -moz-transition: background 0.2s;
-    transition: background 0.2s;
+    height: 80px;
+    z-index: 3000;
+    /* background: url(../images/sunrise.jpg) no-repeat top;
+    background-size: cover; */
+    /* -webkit-transition: background 0.4s;
+    -moz-transition: background 0.4s; */
+
+    background: transparent;
+
+    transition: background 0.4s ease;
+    
 }
 @media only screen and (min-width: 768px) {
     .cd-header {
@@ -73,6 +90,7 @@ Main components
     }
 }
 
+/* for displaying logo (current not active) */
 #cd-logo {
     position: absolute;
     left: 10px;
@@ -94,6 +112,7 @@ Main components
         left: 60px;
     }
 }
+/* ========= hamburger nav menu =========== */
 
 .cd-menu-trigger {
     display: inline-block;
@@ -142,12 +161,15 @@ Main components
 .cd-menu-trigger span::after {
     bottom: -6px;
 }
+
+/* hamburger button desktop hovering animation */
 .no-touch .cd-menu-trigger:hover span::before {
     top: -8px;
 }
 .no-touch .cd-menu-trigger:hover span::after {
     bottom: -8px;
 }
+
 @media only screen and (min-width: 768px) {
     .cd-menu-trigger {
         top: 16px;
@@ -163,20 +185,21 @@ Main components
 }
 
 #main-nav {
-   position: fixed;
-    top: 0;
-    left: 0;
+    position: fixed;
+    top: 80px;
+    left: auto;
+    right: 0px;
     width: 100%;
-    height: 100%;
+    height: 40%;
     background: #F9F9F9;
     /* Force Hardware Acceleration in WebKit */
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
+    /* -webkit-transform: translateZ(0);*/
+    -webkit-backface-visibility: hidden; 
     /* we move this element off the canvas */
-    -webkit-transform: translateY(-100%);
+    /* -webkit-transform: translateY(-100%);
     -moz-transform: translateY(-100%);
     -ms-transform: translateY(-100%);
-    -o-transform: translateY(-100%);
+    -o-transform: translateY(-100%); */
     transform: translateY(-100%);
     -webkit-transition-property: -webkit-transform;
     -moz-transition-property: -moz-transform;
@@ -188,12 +211,35 @@ Main components
 }
 #main-nav ul {
     height: 100%;
-    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+    /* overflow-y: scroll; */
 }
 #main-nav li {
-    height: 20%;
+  flex: 1;                               /* equal vertical space per item */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#main-nav li a {
+/* #main-nav li {
+    height: 25%;
+} */
+ #main-nav li a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #dfdbec;
+  color: #3a393f;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0;                            /* let centering come from flex */
+}
+/* #main-nav li a {
     position: relative;
     display: block;
     padding: 0 10%;
@@ -203,7 +249,7 @@ Main components
     font-size: 20px;
     font-size: 1.25rem;
     font-weight: bold;
-}
+} */
 #main-nav li a span {
     position: absolute;
     left: 50%;
