@@ -173,6 +173,16 @@ $('.scrolldown a').bind('click', function () {
     //End
 });
 
+document.querySelectorAll(".project-card .project-header").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const card = btn.closest(".project-card");
+    const body = card.querySelector(".project-body");
+    const open = card.classList.toggle("is-open");
+
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    body.hidden = !open;
+  });
+});
 
 
 

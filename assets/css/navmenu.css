@@ -24,14 +24,7 @@ Modules - reusable parts of our design
 Main components 
 
 -------------------------------- */
-.home, #home {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-.home .container,
-#home .container {
-  padding-top: 80px;  /* same as header height */
-}
+
 .home-main-content {
     /* for main page content */
     position: relative;
@@ -184,7 +177,7 @@ Main components
     }
 }
 
-#main-nav {
+#main-nav{
     position: fixed;
     top: 80px;
     left: auto;
@@ -200,7 +193,7 @@ Main components
     -moz-transform: translateY(-100%);
     -ms-transform: translateY(-100%);
     -o-transform: translateY(-100%); */
-    transform: translateY(-100%);
+    transform: translateY(calc(-100% - 80px));
     -webkit-transition-property: -webkit-transform;
     -moz-transition-property: -moz-transform;
     transition-property: transform;
