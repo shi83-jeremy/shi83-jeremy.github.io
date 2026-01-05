@@ -546,6 +546,7 @@ nav ul li {
                    Team Section
 ====================================================================*/
 
+/*
 .main_team_area{
     overflow: hidden;
 }
@@ -601,10 +602,6 @@ nav ul li {
     font-weight: 300;
 }
 
-/*=====================================================================
-                    Testimonial Section 
-====================================================================*/
-
 .main_testimonial_area{
     background: url(../images/testbg.jpg) no-repeat top center;
     background-size:cover;
@@ -640,84 +637,98 @@ nav ul li {
     letter-spacing: 2px;
     text-transform: uppercase;
 }
+*/
 
 /*=====================================================================
-                    Blog Section 
-====================================================================*/
-
-.main_blog_area{
-    overflow: hidden;
-}
-.main_blog_area .single_blog_menu{}
-.main_blog_area .single_blog{}
-.main_blog_area .single_blog_menu h2{
-    border-right: 2px solid #bbb;
-}
-.main_blog_area .single_blog_menu ul{
-    margin-top:30%;
-}
-.main_blog_area .single_blog_menu ul li a{
-    color:#bbb;
-    line-height: 2.5rem;
-}
-.main_blog_area .single_blog_menu ul li.active a{
-    color:#1e1e1e;
-    font-weight: 700;
-}
-.main_blog_area .single_blog .single_blog_img{}
-.main_blog_area .single_blog .single_blog_text{}
-
-.main_blog_area .single_blog .single_blog_text h6{
-    font-weight: 500;
-}
-.main_blog_area .single_blog .single_blog_text span{
-    font-weight: 100;
-    font-size:0.714rem;
-}
-.main_blog_area{}
-
-
-
-
-/*=====================================================================
-                    Contact Us Section
+                        Contact Section
 ====================================================================*/
 
 
-.ourmap{
-    height: 648px;
-    width:100%;
+.contact-section {
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+.contact-form input,
+.contact-form textarea {
+  box-sizing: border-box;     /* CRITICAL */
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  font-family: inherit;
+}
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.main_contact_area{
-    background: #000;
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 10px;
 }
-.main_contact_area .head_title{
-    width:100%;
+
+.contact-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
 }
-.main_contact_area .head_title h2{
-    color:#fff;
+
+.contact-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
-.main_contactme_area input[type=submit] {
-    -webkit-appearance: button;
-    cursor: pointer;
-    width: 20%;
-    background: #1c1c1c;
-    border:1px solid #555;
-    border-radius: 30px;
-    height: 36px;
-    font-size: 0.875rem;
-    transition: all 0.6s;
-    color:#ddd;
+
+.form-group {
+  margin-bottom: 18px;
 }
-.main_contactme_area input[type=submit]:hover {
-    background: #000;
-    color:#fff;
-    border-color:#fff;
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
 }
-.main_contactme_area input[type=submit]:focus {
-    outline:0;
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  font-family: inherit;
 }
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.contact-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background: #333;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact-btn:hover {
+  background: #000;
+}
+
+.form-status {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
 
 
 
