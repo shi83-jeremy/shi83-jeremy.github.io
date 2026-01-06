@@ -293,11 +293,17 @@ nav ul li {
 
 .home {
     background: url(../images/sunrise.jpg) no-repeat center #141315;
-    /* background-position:  */
     background-size: cover;
     position: relative;
     padding-top: 80px;
     background-attachment: fixed;
+}
+
+@media (max-width: 1024px) {
+  .home {
+    background-attachment: scroll;
+    background-position: center top; /* optional, often looks better */
+  }
 }
 
 .main_home {
