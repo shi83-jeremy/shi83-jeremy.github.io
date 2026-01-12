@@ -201,25 +201,48 @@ jQuery(document).on('click', '.navbar-collapse.in', function (e) {
 });
 
 // for contact section
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
+  const statusEl = document.getElementById("form-status");
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const status = document.getElementById("form-status");
+  if (!form) return;
 
-  if (!name || !email || !message) {
-    status.textContent = "Please fill out all fields.";
-    status.style.color = "red";
-    return;
-  }
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  status.textContent = "Message sent! (Demo only)";
-  status.style.color = "green";
+    // UI feedback
+    statusEl.textContent = "Sending...";
+    statusEl.style.color = "#333";
 
-  // Clear form
-  this.reset();
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        statusEl.textContent = "Thanks — your message was sent!";
+        statusEl.style.color = "green";
+        form.reset();
+      } else {
+        // Try to surface Formspree's error message
+        let data = null;
+        try { data = await res.json(); } catch (_) {}
+
+        const msg =
+          data?.errors?.[0]?.message ||
+          "Something went wrong. Please try again.";
+
+        statusEl.textContent = msg;
+        statusEl.style.color = "red";
+      }
+    } catch (err) {
+      statusEl.textContent = "Network error — please try again later.";
+      statusEl.style.color = "red";
+    }
+  });
 });
+
 
 
